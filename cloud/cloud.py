@@ -23,7 +23,7 @@ s3 = boto3.client(
 )
 
 def list_files(bucket_name):
-    """Lists all files in the specified prefix in an S3 bucket"""
+    """Lists"""
     try:
         objects = s3.list_objects_v2(Bucket=bucket_name, Prefix="b-wing/")
         if 'Contents' in objects:
@@ -35,7 +35,7 @@ def list_files(bucket_name):
         print(f"Error listing files: {e}")
 
 def upload_file(bucket_name, file_path, target_key):
-    """Uploads a local file to a specified location in the bucket"""
+    """Uploads"""
     try:
         s3.upload_file(file_path, bucket_name, target_key)
         print(f"File {file_path} uploaded as {target_key} in bucket {bucket_name}.")
@@ -57,7 +57,7 @@ def list_filtered_files(bucket_name, filter_regex):
         print(f"Error filtering files: {e}")
 
 def delete_filtered_files(bucket_name, filter_regex):
-    """Deletes files matching a given regex in the bucket"""
+    """Delete"""
     try:
         objects = s3.list_objects_v2(Bucket=bucket_name, Prefix="b-wing/")
         pattern = re.compile(filter_regex)
