@@ -1,3 +1,3 @@
-echo "# AWS S3 CLI Task" > README.md
+Cała praca znajduje się w gałęzi master. Powinno wszystko działać
 
 # aws-s3-cli-task
